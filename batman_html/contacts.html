@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Contact</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <ul id='nav'>
+                <li>
+                    <a href="profile.html">Profile</a>
+                </li>
+                <li>
+                    <a href="friends.html">Friends</a>
+                </li>
+                <li class="active">
+                    <a href="contacts.html">Contacts</a>
+                </li>
+                <li>
+                    <a href="trailer.html">Trailer</a>
+                </li>
+                <li>
+                    <a href="bases.html">Bases</a>
+                </li>
+                <li>
+                    <a href="#">DrawBatman</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+   
+    <h1>Contact Batman</h1>
+    <form class="contacts-form">
+        <input type="hidden" name='subject'>
+        <fieldset>
+            <legend>Send Batman a message:</legend>
+            <div class="inputs-left">
+                <div class="contacts-information contact-insides">
+                    <label for="fname">First name:</label>
+                    <input type='text' id='fname'>
+
+                    <label for="lname">Last name:</label>
+                    <input type='text' id='lname'>
+
+                    <label for="email">Email:</label>
+                    <input type='email' id='email'>
+                </div>
+                <br>
+                <div class="radio-buttons contact-insides">
+                    <span> Are you a friend? </span><br>
+                    <br>
+                    <div>
+                        <input type="radio" id='yes'>
+                        <label for="yes">Yes, of course</label>
+                    </div>
+                    <div>
+                        <input type="radio" id='maybe'>
+                        <label for="maybe">Maybe</label>
+                    </div>
+                    <div>
+                        <input type="radio" id='no'>
+                        <label for="no">NO</label>
+                    </div>
+                    <div>
+                        <input type="radio" id='will'>
+                        <label for="will">We'll see</label>
+                    </div>
+                </div>
+                <div class="inputs">
+                    <input type="submit" id="submit" value="Send">
+                </div>
+            </div>
+            <div class="inputs-left contact-message">
+                <div>
+                    <label for="textarea">Message:</label>
+                    <textarea id="textarea" name="textarea" rows="5" cols="25">Please drop a line here</textarea>
+                </div>
+            </div>
+        </fieldset>
+
+    </form>
+</body>
+
+</html>

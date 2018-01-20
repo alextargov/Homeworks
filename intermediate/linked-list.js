@@ -48,29 +48,57 @@ LinkedList.prototype.print = function() {
 
 LinkedList.prototype.insert = function(index, ...values) {
     let current = this.head;
-    let counter = 1;
+    let counter = 0;
     while (current) {
         if (counter === index) {
-            
-            for (let i = 0; i < values.length; i += 1) {
-                console.log(`counter = ${counter} || index = ${index} current = ${current.value} length = ${this.length}`);
+            for (let i = values.length -1; i >= 0; i -= 1) {
                 const node = new Node(values[i]);
-                current.next = current;
-                current = node;
+                node.next = current.next;
+                current.next = node;
                 this.length += 1;
-                console.log(`counter = ${counter} || index = ${index} current = ${current.value} length = ${this.length}`);
             }
             break;
         }
         counter += 1;
         current = current.next;
     }
-}
+};
+
+LinkedList.prototype.at = function(index, value = null) {
+    let current = this.head;
+    let counter = 0;
+
+    while (current) {
+        if (counter === index && value) {
+            current.value = value;
+        } else if (counter === index) {
+            return current.value;
+        }
+        counter += 1;
+        current = current.next;
+    }
+};
+
+LinkedList.prototype.removeAt = function(index) {
+    const current = this.head;
+
+    for (let i = 0; i < index - 1; i +=1) {
+        current = current.next;
+    }
+
+    const tempNode = current.next;
+    const value = tempNode.value;
+    current.next = tempNode.next;
+    this.length -= 1;
+    return value;
+};
 
 const list = new LinkedList();
 // list.append(5, 6, 8);
 list.append(4, 9, 8);
-list.insert(2, 10);
-// list.prepend(66);
-//console.log(list);
 list.print();
+console.log(list.removeAt(1) + 'ggggggggggg');
+console.log('--'.repeat(10));
+list.print();
+console.log(list.length);
+
