@@ -106,7 +106,7 @@ class Graph {
             }
             vertices.push(vertex);
         }
-        return vertices.map(Number).sort((a, b) => a > b)[0];
+        return vertices.map(Number).sort((a, b) => a - b)[0];
     }
 
     getResult(actions) {
@@ -129,7 +129,6 @@ class Graph {
                     result.push(i);
                     actions -= 1;
                 }
-
             }
 
             for (let i = curr; i < best; i += 1) {
@@ -140,7 +139,6 @@ class Graph {
                     result.push(i);
                     actions -= 1;
                 }
-
             }
             result.push(best);
             this._remove(best, usedElements);

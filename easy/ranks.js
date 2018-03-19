@@ -10,7 +10,7 @@ const getGets = (arr) => {
 // this is the test
 const test = [
     '5',
-    '0 -5 4 -11 1'
+    '0 -5 4 -11 1',
 ];
 
 
